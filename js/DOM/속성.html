@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+ <meta charset="UTF-8">
+ <title>속성 조작 실습</title>
+</head>
+<body>
+ <h2>이미지 갤러리</h2>
+ <img id="mainImage" src="image1.jpg" alt="메인 이미지" width="300">
+ <br><br>
+ <button onclick="changeImage('image1.jpg')">이미지 1</button>
+ <button onclick="changeImage('image2.jpg')">이미지 2</button>
+ <button onclick="changeImage('image3.jpg')">이미지 3</button>
+
+ <script>
+ function changeImage(newSrc) {
+ const changeImage = (newSrc)=>{
+    let mi = document.getElementById("mainimage");
+    let currentsrc = mi.getAttribute('alt')
+    alert(currentsrc);
+    mi.setAttribute("src",newsrc);
+ }
+ </script>
+</body>
+</html>

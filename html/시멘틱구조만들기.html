@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 시멘트 구조</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; }
+        header { background: #2c3e50; color: white; padding: 1rem; text-align: center; }
+        nav{
+            background: #34495e; padding: 1rem;
+        }
+        nav ul{
+            list-style: none; display: flex; justify-content: center; right: ;
+        }
+        nav ul li{margin: 0 1rem;}
+        nav a{
+            color: white; text-decoration: nones;
+        }
+            main { display: flex; max-width: 1200px; margin: 0 auto; padding: 2rem; gap: 2rem; }
+            section { flex: 2; }
+            aside { flex: 1; background: #ecf0f1; padding: 1rem; border-radius: 5px; }
+
+            article { background: white; margin-bottom: 2rem; padding: 1.5rem; border: 1px solid #ddd; border-radius: 5px; }
+
+            footer { background: #2c3e50; color: white; text-align: center; padding: 2rem; margin-top: 3rem; }
+            [id="question"]{
+                background-color: pink; font-weight: 700;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <h1> 회사 로고 </h1>
+        <p> 회사 주제명 </p>
+    </header>
+    <nav>
+        <ul>
+            <li> <a href="#home">홈</a></li>
+            <li> <a href="#">회사소개</a></li>
+            <li> <a href="#">제품소개</a></li>
+            <li> <a href="#">견적서</a></li>
+            <li> <a href="#">연락처</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <article>
+                <header>
+                    <h2>제품소개</h2>
+                    <p>아이폰 신제품 특징</p>
+                    <form>
+                        <label for="info">질문사항</label>
+                        <input type="text" id="question">
+                    </form>
+                </header>
+                <p>출시일:2026-04-30 10:00AM 판매 한국 2026-05-01 부터</p>
+            </article>
+        </section>
+        <aside>
+            <section>
+                <h3>아이폰 체험존</h3>
+                <p>이메일로 접수하셔서 당첨자 100명에게 </p>
+            </section>
+        </aside>
+    </main>
+    <footer>
+        <p> &copy;애플사 All rights reserved. </p>
+        <p> apple@apple.com | 123-4567 </p>
+    </footer>
+</body>
+</html>

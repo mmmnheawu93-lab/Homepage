@@ -1,0 +1,586 @@
+/* 기본 여백 초기화 및 폰트 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 스크롤 스냅 (풀페이지 스크롤) 활성화 */
+html {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #050505; /* 전체 배경색 */
+    color: #ffffff; /* 기본 글자색을 흰색으로 통일 */
+}
+
+/* 모든 페이지(섹션) 공통 설정 */
+.page {
+    height: 100vh; /* 각 페이지를 화면 꽉 차게 설정 */
+    width: 100vw;
+    scroll-snap-align: start; /* 화면 상단에 딱 맞춰서 멈추도록 설정 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px; /* 기존 50x 오타 수정 */
+}
+
+/* 1페이지는 내부 컨테이너 정렬을 위해 flex 해제 (hero-section이 담당) */
+.page-1 {
+    display: block; 
+}
+
+/* 1페이지: 배경 이미지 및 레이아웃 설정 */
+.hero-section {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../img/1.png'); /* 경로 확인 필요 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    align-items: center;
+    padding-left: 8%;
+}
+
+/* 1페이지: 텍스트 스타일 */
+.text-container {
+    color: #ffffff;
+    text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.8);
+}
+
+.main-title {
+    font-size: 6rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.accent-arrow {
+    color: #98ff6b;
+    font-size: 6.5rem;
+    font-weight: 900;
+    text-shadow: 0 0 15px rgba(152, 255, 107, 0.5);
+}
+
+.sub-title {
+    font-size: 2.2rem;
+    font-weight: 500;
+    letter-spacing: -1px;
+    margin-left: 80px;
+}
+
+/* 반응형 설정 */
+@media (max-width: 1200px) {
+    .main-title { font-size: 4rem; }
+    .accent-arrow { font-size: 4.5rem; }
+    .sub-title { font-size: 1.5rem; margin-left: 60px; }
+}
+
+@media (max-width: 768px) {
+    .hero-section { padding-left: 5%; }
+    .main-title { font-size: 2.5rem; }
+    .accent-arrow { font-size: 3rem; }
+    .sub-title { font-size: 1.1rem; margin-left: 40px; }
+}
+
+/* ----------------------------------- */
+/* 2페이지 (SYSTEM SEQUENCE) 스타일 시작 */
+/* ----------------------------------- */
+
+/* 2페이지: 배경 이미지 및 레이아웃 */
+.page-2 {
+    background-image: url('../../img/2.png'); /* 2번 이미지 경로 (확장자 확인) */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: flex-start; /* 가로를 왼쪽으로 정렬 */
+    padding-left: 6%; /* 전체 묶음의 왼쪽 여백 (화면 보면서 조절하세요) */
+}
+
+/* 1. 전체 묶음을 화면 위쪽으로 확 끌어올리기 */
+.sequence-container {
+    display: flex;
+    flex-direction: column;
+    /* 💡 기존 -100px에서 -200px로 변경: 제목이 네모 칸 밖으로 완전히 빠져나가도록 전체를 위로 올립니다 */
+    margin-top: -200px; 
+}
+
+/* 1. 화면 전체 묶음 (타이틀 위치 결정) */
+.sequence-container {
+    display: flex;
+    flex-direction: column;
+    /* 💡 타이틀을 조금 더 위로 올리기 위해 마이너스 값을 더 키웠습니다 */
+    margin-top: -220px; 
+}
+
+/* 2. 타이틀 (타이틀과 01번 사이의 간격) */
+.sequence-title {
+    font-size: 3.8rem;
+    font-weight: 900;
+    color: #ffffff;
+    /* 💡 핵심 1: 타이틀은 가만히 두고 01번만 밑으로 밀어내기 위해 여백을 확 늘렸습니다 */
+    margin-bottom: 70px; 
+    text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.8);
+    letter-spacing: -1px;
+}
+
+/* 3. 리스트 전체 묶음 (01번~06번 사이의 줄 간격) */
+.sequence-list {
+    display: flex;
+    flex-direction: column;
+    /* 💡 핵심 2: 상자 간격에 맞게 줄 간격을 살짝 넓혔습니다 */
+    gap: 20px; 
+}
+
+/* 4. 개별 리스트 아이템 (상자 안에서 세로 중앙 정렬) */
+.sequence-item {
+    display: flex;
+    align-items: center; 
+    /* 💡 배경 상자의 높이와 비슷하게 맞추어 텍스트가 쏠리지 않게 합니다 */
+    height: 55px; 
+}
+
+/* 5. 초록색 숫자 디자인 (왼쪽 짧은 괄호 칸) */
+.seq-num {
+    /* 💡 핵심 1: 왼쪽 괄호 칸의 실제 너비만큼 px을 늘려서 공간을 확보합니다 */
+    width: 180px; 
+    text-align: center; /* 확보된 공간 안에서 숫자를 정중앙에 배치 */
+    font-size: 3.8rem; /* 💡 숫자 크기를 2번 이미지처럼 큼직하게 확대 */
+    font-weight: 900;
+    color: #98ff6b; 
+    text-shadow: 0 0 15px rgba(152, 255, 107, 0.6);
+    margin-top: 0;
+}
+
+/* 6. 흰색 텍스트 디자인 (오른쪽 긴 칸) */
+.seq-text {
+    font-size: 2.6rem; /* 💡 텍스트 크기를 2번 이미지처럼 시원하게 확대 */
+    font-weight: 700;
+    color: #ffffff;
+    /* 💡 핵심 2: 숫자 칸에서 텍스트가 얼마나 떨어져서 시작할지 정합니다 */
+    padding-left: 35px; 
+    letter-spacing: -1px;
+    margin-top: 0;
+}
+
+/* =========================================
+   💡 여기서부터 진짜 중요합니다! (한 줄씩 노가다 세팅)
+   각 줄의 위치가 안 맞으면 아래의 px 숫자를 조절하세요.
+   플러스(+) 숫자는 밑으로 내려가고, 마이너스(-) 숫자는 위로 올라갑니다.
+========================================= */
+
+/* 1번째 줄 (01. 기획 개요) */
+.sequence-item:nth-child(1) {
+    transform: translateY(0px); /* 1번 줄 기준점 */
+}
+
+/* 2번째 줄 (02. 제작 과정...) */
+.sequence-item:nth-child(2) {
+    transform: translateY(38px); /* 밑으로 12px 내림 */
+}
+
+/* 3번째 줄 (03. 연출 방향) */
+.sequence-item:nth-child(3) {
+    transform: translateY(80px); /* 더 내림 */
+}
+
+/* 4번째 줄 (04. 사용 도구...) */
+.sequence-item:nth-child(4) {
+    transform: translateY(115px); 
+}
+
+/* 5번째 줄 (05. 제작 소감) */
+.sequence-item:nth-child(5) {
+    transform: translateY(160px); 
+}
+
+/* 6번째 줄 (06. 향후 계획) */
+.sequence-item:nth-child(6) {
+    transform: translateY(200px); 
+}
+
+/* --- 1. 배경 영역: 카드를 왼쪽 위로 옮기기 --- */
+.page-3 {
+    background-image: url('../../img/3.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    width: 100vw;  /* 화면 꽉 차게 */
+    height: 100vh; /* 다른 페이지와 동일하게 스크롤 길이 맞춤 */
+    
+    display: flex;
+    /* 💡 핵심: 카드를 위로(flex-start), 왼쪽으로(flex-start) 보냅니다 */
+    align-items: flex-start; 
+    justify-content: flex-start; 
+    
+    /* 💡 핵심: 위에서 18%, 왼쪽에서 10% 여백을 주어 2번 이미지와 완벽한 위치를 잡습니다 */
+    padding: 18vh 0 0 10vw; 
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* 2. 컨테이너: (이전의 margin-top: -10% 같은 임시 코드는 삭제) */
+.detail-container {
+    width: 100%;
+    max-width: 650px;
+    margin: 0; 
+}
+
+/* 3. 정보 카드: 색상 및 테두리 */
+.info-card {
+    background-color: rgba(20, 24, 28, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* 전체 테두리는 아주 얇고 투명하게 */
+    border-radius: 12px;
+    padding: 40px;
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* 초록색 꺾쇠 모서리 (좌측 상단) */
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 35px;
+    height: 35px;
+    border-top: 3px solid #00ff88;
+    border-left: 3px solid #00ff88;
+    border-top-left-radius: 12px;
+}
+
+/* 초록색 꺾쇠 모서리 (우측 하단) */
+.info-card::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 35px;
+    height: 35px;
+    border-bottom: 3px solid #00ff88;
+    border-right: 3px solid #00ff88;
+    border-bottom-right-radius: 12px;
+}
+
+/* --- 4. 제목 글씨 수정 (크고 굵게!) --- */
+.info-card h2 {
+    font-size: 30px; /* 💡 글씨 크기 대폭 확대 */
+    font-weight: 900; /* 💡 아주 굵은 폰트 적용 */
+    margin-top: 0;
+    margin-bottom: 25px;
+    letter-spacing: -1px;
+}
+.info-card h2 .number {
+    color: #00ff88;
+    margin-right: 8px;
+}
+
+/* 5. 해시태그 */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+.tag {
+    background-color: #00ff88;
+    color: #000;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-size: 15px; /* 해시태그 글씨도 살짝 키움 */
+    font-weight: 800;
+}
+
+/* 6. 테이블(리스트) 영역 */
+.info-table {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-row {
+    display: flex;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+    align-items: flex-start;
+}
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    min-width: 65px;
+    color: #a0ffc8;
+    font-weight: 700;
+    font-size: 15px;
+    flex-shrink: 0;
+}
+
+.info-desc {
+    color: #e0e0e0;
+    line-height: 1.6;
+    word-break: keep-all;
+    font-size: 15px;
+    margin: 0;
+    flex: 1;
+}
+
+/* =========================================
+   페이지 4 (제작 과정) 스타일
+========================================= */
+.page-4 {
+    background-image: url('../../img/4.png'); /* 배경 이미지 경로 확인 */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.process-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* --- 상단 타이틀 박스 디자인 --- */
+.process-title-box {
+    margin-top: 8vh; /* 화면 위에서부터의 위치 조절 */
+    background-color: rgba(20, 25, 25, 0.85); /* 어두운 반투명 배경 */
+    border: 1px solid rgba(152, 255, 107, 0.4); /* 얇은 네온 초록 테두리 */
+    padding: 15px 40px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* 약간의 그림자 */
+}
+
+.process-main-title {
+    font-size: 2.2rem; /* 2번 이미지 비율에 맞게 크기 살짝 조정 */
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -1px;
+}
+
+.title-highlight {
+    color: #98ff6b; /* '02. 제작 과정:' 부분만 초록색으로 */
+    margin-right: 10px;
+}
+
+.process-cards-container {
+    display: flex;
+    justify-content: space-between; 
+    
+    /* 🌟 기존 86% 정도였던 숫자를 90% ~ 94% 사이로 팍 늘려보세요! */
+    /* 숫자를 키울수록 1번은 왼쪽으로, 4번은 오른쪽으로 이동합니다. */
+    width: 89%; 
+    
+    position: absolute; 
+    top: 52%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+
+/* --- 개별 카드 내부 디자인 --- */
+.process-card {
+    /* flex: 1;  <-- 🚨 범인 검거! 이 줄은 아예 지워버렸습니다! */
+    
+    /* ★ 개별 빨간 상자의 너비 (초록색 상자 너비와 똑같이 맞추세요) */
+    width: 20%; /* 뚱뚱하면 18%, 홀쭉하면 22% 등으로 조절 */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; 
+    padding-bottom: 30px; 
+    height: 330px; 
+    
+
+}
+
+
+.card-icon {
+    margin-bottom: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px; /* 아이콘이 들어갈 높이 확보 */
+}
+
+.card-icon img {
+    width: 70px; /* 배경 상자 크기에 맞춰 적절히 조절 (60~80px 추천) */
+    height: auto;
+    object-fit: contain;
+    /* 네온 효과를 주고 싶다면 아래 필터를 유지하세요 */
+    filter: drop-shadow(0px 0px 8px rgba(152, 255, 107, 0.6)); 
+}
+
+/* 카드 제목 */
+.card-title {
+    font-size: 1.6rem; /* 글씨 크기를 1번 이미지에 맞게 살짝 줄임 */
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 5px; 
+    letter-spacing: -1px;
+}
+
+/* 카드 설명 */
+.card-desc {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #e0e0e0; /* 🌟 2번 이미지에서 설명이 너무 어두워 안 보이던 현상 해결 (밝은 회색) */
+    line-height: 1.4;
+    word-break: keep-all;
+}
+
+/* 아이콘 영역 설정 */
+.card-icon {
+    margin-bottom: 25px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px; 
+    
+    /* 💡 여기가 핵심! 이전의 4rem(거대한 글씨) 찌꺼기를 없애고, 
+       이미지가 없을 때 나오는 글씨를 투명하게 숨겨버립니다. */
+    font-size: 1rem; 
+    color: transparent; 
+}
+
+.card-icon img {
+    width: 75px; 
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0px 0px 8px rgba(152, 255, 107, 0.6)); 
+}
+
+/* 카드 제목 */
+.card-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 8px; /* 제목과 설명 사이 간격 */
+    letter-spacing: -1px;
+}
+
+/* 카드 설명 */
+.card-desc {
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: #b3b3b3; /* 2번 이미지처럼 살짝 어두운 회색으로 변경 */
+    line-height: 1.4;
+    word-break: keep-all;
+}
+
+/* 5페이지: 배경 이미지 및 레이아웃 */
+.page-5{
+     background-image: url('../../img/포토샵\ 슬라이드5.png');
+     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: flex-start; /* 가로를 왼쪽으로 정렬 */
+    padding-left: 6%; /* 전체 묶음의 왼쪽 여백 (화면 보면서 조절하세요) */
+}
+
+
+/* 6페이지: 배경 이미지 및 레이아웃 */
+.page-6{
+     background-image: url('../../img/포토샵\ 슬라이드6\ .png');
+     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: flex-start; /* 가로를 왼쪽으로 정렬 */
+    padding-left: 6%; /* 전체 묶음의 왼쪽 여백 (화면 보면서 조절하세요) */
+}
+
+/* 7페이지: 배경 이미지 및 레이아웃 */
+.page-7{
+     background-image: url('../../img/포토샵\ 슬라이드7.png');
+     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: flex-start; /* 가로를 왼쪽으로 정렬 */
+    padding-left: 6%; /* 전체 묶음의 왼쪽 여백 (화면 보면서 조절하세요) */
+}
+
+/* 8페이지: 배경 이미지 및 레이아웃 */
+.page-8{
+     background-image: url('../../img/포토샵\ 슬라이드8\ .png');
+     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: flex-start; /* 가로를 왼쪽으로 정렬 */
+    padding-left: 6%; /* 전체 묶음의 왼쪽 여백 (화면 보면서 조절하세요) */
+}
+
+/*9 마지막페이지*/
+/* --- 1. 배경이 될 전체 화면 설정 --- */
+.video-page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    
+    /* 여기에 2번 이미지(밤거리)를 배경으로 추가합니다 */
+    background-image:url("../../img/9.png"); /* 실제 2번 이미지가 있는 경로로 수정해 주세요! */
+    background-size: cover; /* 이미지가 화면에 꽉 차도록 비율을 맞춥니다 */
+    background-position: center; /* 이미지가 가운데 정렬되도록 합니다 */
+}
+
+/* --- 유튜브 링크 버튼 디자인 --- */
+.youtube-link-btn {
+    padding: 18px 45px;
+    font-size: 22px;
+    font-weight: 800;
+    color: #ffffff;
+    background-color: rgba(255, 0, 0, 0.85); /* 유튜브 느낌의 붉은색 반투명 */
+    border-radius: 50px;
+    text-decoration: none; /* 밑줄 제거 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease; /* 부드러운 애니메이션 효과 */
+    z-index: 10;
+}
+
+/* 마우스 올렸을 때 효과 */
+.youtube-link-btn:hover {
+    background-color: #ff0000;
+    transform: scale(1.05); /* 버튼이 살짝 커짐 */
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.5);
+}

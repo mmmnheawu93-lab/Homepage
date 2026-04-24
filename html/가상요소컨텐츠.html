@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .greeting{
+            font-size: 20px;
+            color: rgb(163, 241, 255);
+            padding: 10px;
+        }
+        .greeting::before{
+            content: " ★";
+            color: rgb(189, 164, 255);
+        }
+        .greeting::after{
+            content: " ♥";
+            color: rgb(255, 190, 206);
+        }
+
+        .button::before {
+            content: "";
+            display: inline-block;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid white;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .button::after {
+        content: "→";
+        margin-left: 8px;
+        font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <p class="greeting">뿡빵뽕빵</p>
+</body>
+</html>

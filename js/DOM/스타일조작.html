@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스타일조작</title>
+</head>
+<body>
+    <div id="colorbox" style="width: 200px; height: 200px; border: 2px; solid black; margin: 20px;">
+        클릭해보세요!
+    </div>
+    <button id="randombutton">랜덤 색상 변경</button>
+    <script>
+        const colorbox=document,getElementById("colorbox");
+        const randombutton=document.getElementById("randombutton");
+        const randocolor=()=>{
+            for(let i=0; i<6; i++){
+                color=color+letters[math.floor(math.random()*16)];
+                //((math.random()+시작정수)*(끝정수+1))
+                //((math.random))
+            }
+        }
+
+        randombutton.addEventListener('click',()=>{
+            //color 부분을 랜덤하게 입력
+            const letters='0123456789ABCDEF';
+            let color = '#' //예 #ff0102
+            for(let i=0; i<6; i++){
+                color+letters[0]
+            }
+        })
+
+    <button id="togglebtn">토글버튼</button>
+
+  
+</body>
+</html>
