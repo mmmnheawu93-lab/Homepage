@@ -44,23 +44,23 @@ body, html {
    3. 각 1~17페이지 배경 이미지 연결
    (실제 폴더에 있는 이미지 이름으로 확장자까지 맞춰서 수정해 주세요)
 ========================================= */
-.page-1 { background-image: url('../../img/MUTE-C_AI_Brand_Project/슬라이드1.PNG'); }
-.page-2 { background-image: url('../../img/MUTE-C_AI_Brand_Project/슬라이드2.PNG'); }
-.page-3 { background-image: url('../../img/MUTE-C_AI_Brand_Project/슬라이드3.PNG'); }
-.page-4 { background-image: url('../../img/MUTE-C_AI_Brand_Project/슬라이드4.PNG'); }
-.page-5 { background-image: url('../../img/MUTE-C_AI_Brand_Project/슬라이드5.PNG'); }
-.page-6 { background-image: url('../../img/MUTE-C_AI_Brand_Project/슬라이드6.PNG'); }
-.page-7 { background-image: url('../../img/MUTE-C_AI_Brand_Project/슬라이드7.PNG'); }
-.page-8 { background-image: url('../../img/MUTE-C_AI_Brand_Project/슬라이드8.PNG'); }
-.page-9 { background-image: url('../../img/MUTE-C_AI_Brand_Project/슬라이드9.PNG'); }
-.page-10 { background-image: url('../../img/MUTE-C_AI_Brand_Project/슬라이드10.PNG'); }
-.page-11 { background-image: url('../../img/MUTE-C_AI_Brand_Project/슬라이드11.PNG'); }
-.page-12 { background-image: url('../../img/MUTE-C_AI_Brand_Project/슬라이드12.PNG'); }
-.page-13 { background-image: url('../../img/MUTE-C_AI_Brand_Project/슬라이드13.PNG'); }
-.page-14 { background-image: url('../../img/MUTE-C_AI_Brand_Project/슬라이드14.PNG'); }
-.page-15 { background-image: url('../../img/MUTE-C_AI_Brand_Project/슬라이드15.PNG'); }
-.page-16 { background-image: url('../../img/MUTE-C_AI_Brand_Project/슬라이드16.PNG'); }
-.page-17 { background-image: url('../../img/MUTE-C_AI_Brand_Project/슬라이드17.PNG'); }
+.page-1 { background-image: url('../image/슬라이드1.PNG'); }
+.page-2 { background-image: url('../image/슬라이드2.PNG'); }
+.page-3 { background-image: url('../image/슬라이드3.PNG'); }
+.page-4 { background-image: url('../image/슬라이드4.PNG'); }
+.page-5 { background-image: url('../image/슬라이드5.PNG'); }
+.page-6 { background-image: url('../image/슬라이드6.PNG'); }
+.page-7 { background-image: url('../image/슬라이드7.PNG'); }
+.page-8 { background-image: url('../image/슬라이드8.PNG'); }
+.page-9 { background-image: url('../image/슬라이드9.PNG'); }
+.page-10 { background-image: url('../image/슬라이드10.PNG'); }
+.page-11 { background-image: url('../image/슬라이드11.PNG'); }
+.page-12 { background-image: url('../image/슬라이드12.PNG'); }
+.page-13 { background-image: url('../image/슬라이드13.PNG'); }
+.page-14 { background-image: url('../image/슬라이드14.PNG'); }
+.page-15 { background-image: url('../image/슬라이드15.PNG'); }
+.page-16 { background-image: url('../image/슬라이드16.PNG'); }
+.page-17 { background-image: url('../image/슬라이드17.PNG'); }
 
 /* --- 유튜브 링크 버튼 디자인 --- */
 .youtube-link-btn {
